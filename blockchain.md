@@ -132,9 +132,17 @@ Simplified Payment Verification \(SPV\) 하위섹션에 설명했듯이, 머클 
 >
 > 따라서 경고를 통해 현재의 분기\(fork\)를 바로잡고 다시 최상의 블록체인으로 편승할 수 있도록 도와준다.
 
-풀노드들\(Full nodes\)은 또한 블록과 트랜잭션의 버전 번호\(version numbers\)를 확인할 수 있다. 만약 몇몇 최신 블록들의 블록과 트랜잭션의 버전 번호\(the block or transaction version numbers\)가 자신\(non-upgraded node\)이 사용하는 버전 번호보다 크다면, 자신이 현재의 합의규칙\(current consensus rules\)을 따르고 있지 않다고 유추할 수 있다. 비트코인 코어는 이 상황을 getnetworkinfo RPC과 -alertnotify 명령을 통해 보고한다\(설정이 되어 있을 경우만\).
+풀노드들\(Full nodes\)은 또한 블록과 트랜잭션의 버전 번호\(version numbers\)를 확인할 수 있다. 만약 몇몇 최신 블록들의 블록과 트랜잭션의 버전 번호\(the block or transaction version numbers\)가 자신\(non-upgraded node\)이 사용하는 버전 번호보다 크다면, 자신이 현재의 합의규칙\(current consensus rules\)을 따르고 있지 않다고 유추할 수 있다. 비트코인 코어는 이 상황을 getnetworkinfo RPC과 -alertnotify 명령을 통해 노드에게 보고한다\(설정이 되어 있을 경우만\).
+
+> getnetwrokinfo RPC를 호출하면 현재 사용중인 네트워크와 관련된 여러가지 정보를 얻을 수 있는데, 그 중 warning이라는 string 자료형으로 된 field에 경고 내용이 기록되어 있다.
 
 위의 두 경우 모두, 현재의 합의 규칙을 사용하지 않는 노드\(non-upgraded nodes\)에서 오는 경우 블록 및 트랜잭션 데이터를 신뢰해서는 안된다.
+
+풀노드에 연결하는 방식으로 동작하는 SPV 클라이언트는 몇몇 풀노드들에게 연결함으로써 하드포크를 탐지할 수 있다. 또한 풀노드들이 같은 체인에 존재하고 같은 블록 높이를 가지고 있는지도 확인할 수 있으며, 몇몇 블록들을 임의로 더하거나 뺌으로써 전송지연\(transmission delays\)과 실효블록들\(stale blocks\)을 알아낼 수도 있다.
+
+> SPV클라이언트는 모든 블록기록들을 가지고 있지 않기 때문에 풀노드들에게 의존할 수밖에 없다.
+
+또한 SPV 클라이언트는 블록 및 트랜잭션 버전 번호 증가를 모니터링하여 수신 트랜잭션을 처리하고 현재 합의 규칙을 사용하여 새 트랜잭션을 생성하도록해야한다.
 
 
 
