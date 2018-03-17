@@ -74,7 +74,7 @@
 
 마이너가 가장 최신에 위치하게 될 블록\(block at the end of the block chain\)을 동시에\(simultaneous\) 생성할 때, 네트워크를 구성하는 각 노드들은 어떤 블록을 인정\(accept\)할 것인지 선택하게 된다. 아래에서 더 자세히 다루겠지만, 노드들은 보통 첫 번째로 발견한 블록\(the first block they see\)을 선택한다.
 
-결국 마이너는 또 다른 블록을 생성할 것이고, 동시에 생성된 두 블록 중 하나의 블록에 자신이 생성한 블록을 더해 갈 것이다. 그러다 보면 결국 포크가 된 두개의 블록체인 중, 더 긴 블록체인\(side of the fork stronger than the other side\)이 생기게 마련이다. 두 개의 포크 모두 검증된 블록만을 가지고 있다고 했을 때, 보통 피어들은 만드는 데 더 많은 연산이 소모된 블록체인\(the most difficult chain to recreate\)을 선택하게 되어 있다. 이 과정에서 선택되지 못하여 효력이 상실된 실효블록들\(stale blocks\)은 버려지게 된다. \(선택되지 못한, 즉 효력을 잃은 실효블록\(stale block\)들은 고아블록\(orphans or orphan block\)이라 불리기도 한다. 고아블록의 경우 알려진 부모 블록이 없지만 검증된 블록\(true orphan blocks without a known parent block\)을 뜻하기도 한다.\)
+결국 마이너는 또 다른 블록을 생성할 것이고, 동시에 생성된 두 블록 중 하나의 블록에 자신이 생성한 블록을 더해 갈 것이다. 그러다 보면 결국 포크가 된 두개의 블록체인 중, 더 긴 블록체인\(side of the fork stronger than the other side\)이 생기게 마련이다. 두 개의 포크 모두 검증된 블록만을 가지고 있다고 했을 때, 보통 피어들은 만드는 데 더 많은 연산이 소모된 블록체인\(the most difficult chain to recreate\)을 선택하게 되어 있다. 이 과정에서 선택되지 못하여 효력이 상실된 실효블록들\(stale blocks\)은 버려지게 된다. \(선택되지 못한, 즉 효력을 잃은 실효블록\(stale block\)들은 고아 블록\(orphans or orphan block\)이라 불리기도 한다. 고아 블록의 경우 알려진 부모 블록이 없지만 검증된 블록\(true orphan blocks without a known parent block\)을 뜻하기도 한다.\)
 
 갈라진 포크체인들이 지속적으로 각자의 길을 갈 수도 있다. 하나만 선택되지 않고 두 개 모두 고르게 계속 블록이 붙으면서 성장할 수 있는데, 이는 마이너들에게 달려 있다. 어떤 마이너들은 더 긴 블록체인에 성실하게 블록을 더해가는 반면, 51% 공격을 노리고 \(기존 거래 기록들을 엎어버리는 행위\) 포크된 블록에 블록을 계속 추가해가는 마이너도 있을 수 있다.
 
