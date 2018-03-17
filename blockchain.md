@@ -134,9 +134,9 @@ A  B  C  D  E .........Transactions
 
 합의 규칙의 변경은 다양한 방법으로 이루어질 수 있다. 비트코인의 첫 2년 동안은 사토시 나카모토가 몇몇 소프트 포크를 진행했다. 소프트포크의 진행은 새로운 규칙을 바로 적용하기 시작한 클라이언트에서 이전 버전과 호환되는\(backwards-compatible change\) 변경 사항을 배포함\(releasing\)으로써 이뤄졌다. BIP30과 같은 여러 개의 소프트포크는 새로운 규칙이 미리 설정된 시간 또는 블록 높이에서 시행되기 시작할 디데이\(flag day\)를 통해 활성화되었다; 즉, 바로 적용하면 부작용이 있을 수 있으니 미리 시간과 블록 높이에 대해 공지를 주는 것이다. 이러한 포크들은 User Activated Soft Forks \(UASF\)로 알려져 있는 디데이\(flag day\)를 통해 활성화되고, 포크의 성공 여부는 새로운 규칙을 디데이 이후 적용할 충분한 유저가 있는지에 달려있다.
 
-그 후 소프트포크는 새로운 합의 규칙을 시행할 준비가 되었음을 알리기 위해 대다수 \(75% 또는 95%\)의 해쉬비율\(a majority of hash rate\)을 기다렸다가 신호 임계값\(signal threshold\)이 전달되면, 모든 노드\(all nodes\)가 새 규칙을 시행하기 시작한다. 이러한 포크들은 Miner Activated Soft Forks \(MASF\)로 알려져 있으며 성공 여부는 마이너들에게 달려 있다.
+그 후 소프트포크는 새로운 합의 규칙을 시행할 준비가 되었음을 알리기 위해 대다수 \(75% 또는 95%\)의 해시 비율\(a majority of hash rate\)을 기다렸다가 신호 임계값\(signal threshold\)이 전달되면, 모든 노드\(all nodes\)가 새 규칙을 시행하기 시작한다. 이러한 포크들은 Miner Activated Soft Forks \(MASF\)로 알려져 있으며 성공 여부는 마이너들에게 달려 있다.
 
-참고자료들: BIP16, BIP30, 그리고 BIP34는 소프트 포크로 실행된 변경내용들이다. BIP50은 업그레이드된 노드들의 기능을 임시로 다운그레이드하여 해결된 우발적인 하드포크\(an accidental hard fork\)와 임시적인 다운 그레이드가 철회되었을 때의 계획된 하드포크\(an intentional hard fork\)에 대해 설명한다. Gavin Andresen이 만든 이 문서는 미래의 규칙 변경이 어떻게 이루어질 것인가에 대한 개요를 다룬다.
+참고 자료들: [BIP16](https://github.com/bitcoin/bips/blob/master/bip-0016.mediawiki), [BIP30](https://github.com/bitcoin/bips/blob/master/bip-0030.mediawiki), 그리고 [BIP34](https://github.com/bitcoin/bips/blob/master/bip-0034.mediawiki)는 소프트 포크로 실행된 변경내용들이다. [BIP50](https://github.com/bitcoin/bips/blob/master/bip-0050.mediawiki)은 업그레이드된 노드들의 기능을 임시로 다운그레이드하여 해결된 우발적인 하드포크\(an accidental hard fork\)와 임시적인 다운 그레이드가 철회되었을 때의 계획된 하드포크\(an intentional hard fork\)에 대해 설명한다. Gavin Andresen이 만든 이 문서는 미래의 규칙 변경이 어떻게 이루어질 것인가에 대한 개요를 다룬다.
 
 ## Detecting Forks \(포크 탐지\)
 
