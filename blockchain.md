@@ -105,7 +105,7 @@
 A  B  C  D  E .........Transactions
 ```
 
-[Simplified Payment Verification](https://bitcoin.org/en/glossary/simplified-payment-verification) \(SPV\) 하위섹션에 설명했듯이, 머클 트리는 클라이언트가 스스로 트랜잭션을 검증할 수 있게 해준다. 검증이라는 건, 블록 헤더에 속한 머클 루트와 풀 노드\(full peer\)로부터 얻은 중간 해시들\(intermediate hashes\)을 통해 해당 트랜잭션이 블록에 포함되어 있는지 확인하는 것을 말한다. 풀 노드\(full peer\) 자체를 신뢰할지 말지를 고민할 필요는 없다: 블록 헤더를 위조하는 데에는 많은 비용이 발생하며, 중간 해들은 결코 위조될 수 없으며 위조됐을 경우 검증과정에서 걸러지게 되기 때문이다.
+[Simplified Payment Verification](https://bitcoin.org/en/glossary/simplified-payment-verification) \(SPV\) 하위섹션에 설명했듯이, 머클 트리는 클라이언트가 스스로 트랜잭션을 검증할 수 있게 해준다. 검증이라는 건, 블록 헤더에 속한 머클 루트와 풀 노드\(full peer\)로부터 얻은 중간 해시들\(intermediate hashes\)을 통해 해당 트랜잭션이 블록에 포함되어 있는지 확인하는 것을 말한다. 풀 노드\(full peer\) 자체를 신뢰할지 말지를 고민할 필요는 없다: 블록 헤더를 위조하는 데에는 많은 비용이 발생하며, 중간 해시들은 결코 위조될 수 없으며 위조됐을 경우 검증과정에서 걸러지게 되기 때문이다.
 
 > Simplified Payment Verification \(SPV\): 모든 블록을 다운로드 하지 않고 특정 거래가 블록에 포함이 되어 있는지 확인하는 방법으로서, 가볍게 비트코인을 사용하는 고객들이 많이 사용하는 방법이다.
 
