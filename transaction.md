@@ -26,5 +26,11 @@
 
 Bob은 pubkey hash를 Alice에게 제공한다. Pubkey hashes는 항상 비트코인 주소로 암호화\(encoded\)되어 전송된다; [base58](https://bitcoin.org/en/glossary/base58check) 방식으로 암호화된 문자열은 [지불 주소](https://bitcoin.org/en/glossary/address)\(address\), 해시, 오타 검사용 체크섬을 포함한다. 비트코인 주소는 전송인과 수취인이 서로 통신할 수 없는 단방향 매체를 포함한 어떠한 매체로든 전송될 수 있다. 또한 주소는 다른 형식으로 암호화되는 것도 가능한데, 이를테면 bitcoin: URI를 포함하고 있는 QR코드로 암호화될 수 있다.
 
+일단 Alice가 암호화된 주소를 가지고 있고 그 주소를 해독\(decode\)하여 표준 해시로 만들었다면, Alice는 첫번째 트랜잭션을 생성할 수 있다. Alice는 표준 P2PKH 트랜잭션 아웃풋을 생성할 수 있다. 해당 아웃풋에는 Bob의 해시된 공개키에 상응하는 개인키를 가지고 있는 누구나가 소비할 수 있는 실행문이 담겨있다. 이러한 실행문들은 pubkey script 또는 [scriptPubKey](https://bitcoin.org/en/glossary/pubkey-script)로 불린다.
 
+Alice는 트랜잭션을 전파하고 해당 트랜잭션은 블록체인에 추가된다. 네트워크는 이 트랜잭션을 [UTXO](https://bitcoin.org/en/glossary/unspent-transaction-output)\(Unspent Transaction Output\)으로 분류하고, Bob의 [지갑 프로그램](https://bitcoin.org/en/glossary/wallet)\(wallet software\)은 해당 UTXO를 가용 잔액\(spendable balance\)으로 표시한다.
+
+시간이 흘러, Bob이 해당 UTXO를 사용하기로 결정했을 때, Bob은 반드시 이전에 Alice가 트랜잭션 식별자\(txid\)라 불리는 트랜잭션의 해시로 생성했던 트랜잭션과 Alice가 사용한 인덱스 번호에 해당하는 특정 아웃풋을 참조하는 인풋\(input\)을 만들어야한다. 그 다음 Bob은 반드시 signature script를 생성해야 한다; signature script란 Alice가 이전 output's pubkey script에 넣어둔 조건들을 만족시키는 매개변수 데이터의 집합을 뜻한다. Signature scripts는 scriptSgis라고도 불린다.
+
+Pubkey scripts 그리고 signature scrips는 secp256k1 pubkeys와 signatures를 프로그램적인 권한부여 매커니즘을 생성하는 특정 논리를 사용하여 조합한다.
 
