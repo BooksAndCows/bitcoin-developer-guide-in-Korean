@@ -24,5 +24,7 @@
 
 공개키\(pubkey\)는 암호학적으로 해시된다. 공개키가 해시된 값인 [pubkey hash](https://bitcoin.org/en/glossary/p2pkh-address)는 후에 또 반복적으로 생성될 수 있으므로, 따로 공개키와 마찬가지로 따로 저장할 필요는 없다; 비트코인의 주소는 공개키가 해시된 값, pubkey hash를 포함하고 있으며, 이 pubkey hash는 비트코인을 소비하는 사용자가 표준 [pubkey script](https://bitcoin.org/en/glossary/pubkey-script)\([P2PKH](https://bitcoin.org/en/glossary/p2pkh-address)\)를 생성할 수 있게 해준다. 해시는 공개키를 단축하고 난독화하여 수동으로 쉽게 기록할 수 있게하고 예기치 않은 문제에 대한 보안을 제공하므로 나중에 공개키 데이터로부터 개인키를 재구성하는 걸 가능케 해준다.
 
-Bob은 pubkey hash를 Alice에게 제공한다. Pubkey hashes는 항상 비트코인 주소로 암호화\(encoded\)되어 전송된다; base58 방식으로 암호화된 문자열은 [지불 주소](https://bitcoin.org/en/glossary/address)\(address\), 해시, 오타 검사용 체크섬을 포함한다. 비트코인 주소는 
+Bob은 pubkey hash를 Alice에게 제공한다. Pubkey hashes는 항상 비트코인 주소로 암호화\(encoded\)되어 전송된다; [base58](https://bitcoin.org/en/glossary/base58check) 방식으로 암호화된 문자열은 [지불 주소](https://bitcoin.org/en/glossary/address)\(address\), 해시, 오타 검사용 체크섬을 포함한다. 비트코인 주소는 전송인과 수취인이 서로 통신할 수 없는 단방향 매체를 포함한 어떠한 매체로든 전송될 수 있다. 또한 주소는 다른 형식으로 암호화되는 것도 가능한데, 이를테면 bitcoin: URI를 포함하고 있는 QR코드로 암호화될 수 있다.
+
+
 
